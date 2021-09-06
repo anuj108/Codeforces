@@ -9,10 +9,7 @@ void solve()
 {
     int n;
     cin>>n;
-    for(int i=1;i<50;i++)
-    {
-        
-    }
+
 }
 int main()
 {
