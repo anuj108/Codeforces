@@ -24,24 +24,43 @@ void solve()
     }
     else
     {
-        for (int i = 0; i < k; i++)
+        int i = 0;
+        int socket = k;
+        while (true)
         {
-            key--;
-            key = key + arr[i];
-            arr.erase(arr.begin());
-            if (key >= m)
+            if (k > 0)
             {
-                cout << i + 1;
-                flag = 1;
-                return;
+                if (i < n)
+                {
+                    socket = socket - 1 + arr[i];
+                    k--;
+                    i++;
+                }
+                else
+                {
+                    cout << -1;
+                    break;
+                }
             }
-            if(key==0)
+            else if (k == 0)
             {
-                
+                if (i < n)
+                {
+                    socket = socket - 1 + arr[i];
+                    i++;
+                }
+                else
+                {
+                    cout << -1;
+                    break;
+                }
+            }
+            if (socket >= m)
+            {
+                cout << i;
+                break;
             }
         }
-        if (flag == 0)
-            cout << -1;
     }
 }
 int main()
